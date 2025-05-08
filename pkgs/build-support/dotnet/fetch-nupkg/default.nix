@@ -22,7 +22,7 @@ lib.makeOverridable (
     package = stdenvNoCC.mkDerivation rec {
       inherit pname version;
 
-      src = fetchurl {
+      src = builtins.fetchurl {
         name = "${pname}.${version}.nupkg";
         # There is no need to verify whether both sha256 and hash are
         # valid here, because nuget-to-json does not generate a deps.nix
